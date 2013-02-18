@@ -37,7 +37,7 @@ source_suffix = '.rst'
 #source_encoding = 'utf-8-sig'
 
 # The master toctree document.
-master_doc = 'vim'
+master_doc = 'index'
 
 # General information about the project.
 project = u'vim 技巧'
@@ -183,7 +183,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('vim', 'vim.tex', u'vim 技巧 Documentation',
+  ('index', 'vim.tex', u'vim 技巧 Documentation',
    u'Lyh', 'manual'),
 ]
 
@@ -213,7 +213,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('vim', 'vim', u'vim 技巧 Documentation',
+    ('index', 'vim', u'vim 技巧 Documentation',
      [u'Lyh'], 1)
 ]
 
@@ -227,7 +227,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('vim', 'vim', u'vim 技巧 Documentation',
+  ('index', 'vim', u'vim 技巧 Documentation',
    u'Lyh', 'vim', 'One line description of project.',
    'Miscellaneous'),
 ]
