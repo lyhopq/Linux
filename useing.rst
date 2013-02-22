@@ -5,38 +5,38 @@ Linux 实用集
 Linux下实现合并PDF文件
 -------------------------
 
-::
-
-    使用Gost Script和 PDFtk运行如下命令：
-    #gs -q -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=Linuxidc.pdf -dBATCH *.pdf
-    合并结果：把当前目录下所有的 pdf 文件全部合并到 Linuxidc.pdf 中。
-
+    ::
+    
+        使用Gost Script和 PDFtk运行如下命令：
+        #gs -q -dNOPAUSE -sDEVICE=pdfwrite -sOUTPUTFILE=Linuxidc.pdf -dBATCH *.pdf
+        合并结果：把当前目录下所有的 pdf 文件全部合并到 Linuxidc.pdf 中。
+    
 
 杀掉僵尸
 ---------------------
 
-.. code:: bash
-
-    $top  # 看有没有僵尸进程
-    $ps -ef | grep defunct    # 列出僵尸(defunct)进程
-    $kill -9 ppid     # 杀掉僵尸进程的父进程(ppid)
-
-
+     .. code-block:: bash
+     
+         $top  # 看有没有僵尸进程g
+         $ps -ef | grep defunct    # 列出僵尸(defunct)进程g
+         $kill -9 ppid     # 杀掉僵尸进程的父进程(ppid)g
+     
+     
 查看 TCP/IP 链接状况
 ---------------------
-
-.. code:: bash
-
-
-    netstat -n | awk '/^tcp/{++S[$NF]} END {for(a in S) print a, S[a]}'
-
+    
+    .. code-block:: bash
+    
+    
+        netstat -n | awk '/^tcp/{++S[$NF]} END {for(a in S) print a, S[a]}'
+    
 
 系统备份与还原
 ---------------------
 
 - 备份
 
-    .. code:: bash
+    .. code-block:: bash
 
         #cd /
         #tar -cvpzf /home/lyh/Backup/xxx.tgz / 
@@ -46,9 +46,9 @@ Linux下实现合并PDF文件
 
 - 还原
 
-    .. code:: bash
+    .. code-block:: bash
 
-        #tar -xvzf /home/lyh/xxx.tgz -C / }}}
+        #tar -xvzf /home/lyh/xxx.tgz -C / }}}g
 
 
 合并文本行
@@ -56,7 +56,7 @@ Linux下实现合并PDF文件
 
 * 合并相邻两行（奇偶合并）
 
-    .. code:: bash
+    .. code-block:: bash
 
         awk '{if(NR%2==0) {print $0} else {printf $0 "   "}}' filename 
         或
@@ -65,25 +65,24 @@ Linux下实现合并PDF文件
 
 smplayer双字幕制作
 ---------------------
-
-.. code:: bash
-
-
-    ls -1 *.srt > tmp
-    while read l1 && read l2;do
-        file=${l1%.*.*}.srt  # 模式匹配
-        echo $file
-        cat $l1 $l2 > $file
-    done < tmp
-
-.. note::
-
-    模式匹配运算符号：
-     * ${var#pattern}最短匹配开头处，并删除该部分。
-     * ${var##pattern}最长匹配开头处，并删除该部分。
-     * ${var%pattern}最短匹配结尾处，并删除该部分。
-     * ${var%%pattern}最长匹配结尾处，并删除该部分。
-
+    
+    .. code-block:: bash
+    
+        ls -1 *.srt > tmpg
+        while read l1 && read l2;dog
+            file=${l1%.*.*}.srt  # 模式匹配g
+            echo $fileg
+            cat $l1 $l2 > $fileg
+        done < tmpg
+    
+    .. note::
+    
+        模式匹配运算符号：g
+         * ${var#pattern}最短匹配开头处，并删除该部分。
+         * ${var##pattern}最长匹配开头处，并删除该部分。
+         * ${var%pattern}最短匹配结尾处，并删除该部分。
+         * ${var%%pattern}最长匹配结尾处，并删除该部分。
+    
 cron 服务
 -----------
 
@@ -114,7 +113,7 @@ cron 服务
 
 Desktop 文件示例
 -----------------
-  .. code:: bash
+  .. code-block:: bash
 
         $ cat xvidcap.desktop
         [Desktop Entry]
@@ -130,7 +129,7 @@ Desktop 文件示例
 制作ISO文件，并刻录
 --------------------
 
-  .. code:: bash
+  .. code-block:: bash
 
         $mkisofs -r -o myISOFile.ISO folderOrFilename
         $cdrecord --devic=cdwriter-device -tao -eject myISOFile.ISO
@@ -141,7 +140,7 @@ Desktop 文件示例
 
 * rdesktop
 
-  .. code:: bash
+  .. code-block:: bash
 
     rdesktop -f -r sound:local -r clipboard:PRIMARYCLIPBOARD -r disk:MyDisk=/home/lyh/Downloads -a 24 -u administrator -p 203 192.168.0.1
 
@@ -152,7 +151,7 @@ Desktop 文件示例
 查看系统中文字体
 -------------------
 
-  .. code:: bash
+  .. code-block:: bash
 
     $fc-list :lang=zh-cn
 
@@ -161,7 +160,7 @@ Ubuntu 系统备份
 
 * 备份
 
-  .. code:: bash
+  .. code-block:: bash
 
     cd /
     sudo tar -cvpzf /home/lyh/Backup/Ubuntu_2009.3.7.tgz / 
@@ -171,7 +170,7 @@ Ubuntu 系统备份
 
 * 恢复
 
-  .. code:: bash
+  .. code-block:: bash
 
     tar -xvzf /home/lyh/Backup/Ubuntu_2009.3.7.tgz -C /
 
@@ -227,3 +226,12 @@ Ubuntu 系统备份
     ::
 
         $ find *.jpg -exec convert {} {}.pdf \;
+
+vim去掉 `^M`
+-------------------
+
+在vim中显示的 `^M`` 其实是 ``\r`` ，因此使用如下命令去掉： 
+
+    ::
+
+        :%s/\r/g

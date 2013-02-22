@@ -9,3 +9,4 @@ Linux使用及问题解决
 
    useing.rst
    vim.rst
+   command.rst
