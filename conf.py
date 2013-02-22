@@ -40,7 +40,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'vim 技巧'
+project = u'Linux使用及问题解决'
 copyright = u'2013, Lyh'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -164,7 +164,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'vimdoc'
+htmlhelp_basename = 'linuxdoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
@@ -183,7 +183,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'vim.tex', u'vim 技巧 Documentation',
+  ('index', 'linux.tex', u'Linux使用及问题解决',
    u'Lyh', 'manual'),
 ]
 
@@ -213,7 +213,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'vim', u'vim 技巧 Documentation',
+    ('index', 'vim', u'Linux使用及问题解决',
      [u'Lyh'], 1)
 ]
 
@@ -227,7 +227,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'vim', u'vim 技巧 Documentation',
+  ('index', 'vim', u'Linux使用及问题解决',
    u'Lyh', 'vim', 'One line description of project.',
    'Miscellaneous'),
 ]
