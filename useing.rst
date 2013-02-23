@@ -235,3 +235,12 @@ vim去掉 `^M`
     ::
 
         :%s/\r/g
+
+Ubuntu12.04 差异比较工具
+------------------------------
+
+下载\ 脚本_\ 解压后，执行 ``meld.sh`` 脚本，该脚本内容如下： 
+
+.. _脚本: _static/meld.zip
+
+    .. literalinclude:: _static/meld.sh 

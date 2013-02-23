@@ -1,0 +1,60 @@
+#!/usr/bin/python
+# coding: utf-8
+
+import os
+import sys
+import subprocess
+
+from gi.repository import Gio
+
+class Operation:
+
+    @classmethod
+    def do_diff(cls, first, second):
+        cmd = ["meld", first, second]
+        subprocess.call(cmd)
+
+    @classmethod
+    def get_local_path(cls, uri):
+        """Convert the URI to local path"""
+        vfs = Gio.Vfs.get_default()
+        return vfs.get_file_for_uri(uri).get_path()
+
+    @classmethod
+    def first_select(cls, source):
+        home = os.path.expanduser('~')
+        with open('%s/.meld/first.select' % home, 'w') as f:
+            f.write(source)
+
+    @classmethod
+    def diff(cls, source):
+        home = os.path.expanduser('~')
+        with open('%s/.meld/first.select' % home, 'r') as f:
+            first = f.readline()
+
+        with open('%s/.meld/first.select' % home, 'w') as f:
+            f.write('')
+
+        second = source
+        cls.do_diff(first, second)
+
+
+class Worker:
+    """The worker to do the real operation, with getattr to instrospect the operation"""
+    def __init__(self, argv):
+        try:
+            command = argv[1]
+            para = argv[2]
+
+            work = getattr(Operation, command)
+
+            file = para
+            if para.startswith('file'):
+                file = Operation.get_local_path(file)
+            work(file)
+        except:
+            run_traceback('fatal')
+
+if __name__ == "__main__":
+    if len(sys.argv) > 2:
+        Worker(sys.argv)

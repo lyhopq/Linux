@@ -1,0 +1,3 @@
+#!/bin/bash
+
+~/.meld/script-worker diff $NAUTILUS_SCRIPT_SELECTED_URIS
