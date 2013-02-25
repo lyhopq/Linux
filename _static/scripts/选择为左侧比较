@@ -1,0 +1,3 @@
+#!/bin/bash
+
+~/.meld/script-worker first_select $NAUTILUS_SCRIPT_SELECTED_URIS 
