@@ -17,9 +17,9 @@ Linux下实现合并PDF文件
 
      .. code-block:: bash
      
-         $top  # 看有没有僵尸进程g
-         $ps -ef | grep defunct    # 列出僵尸(defunct)进程g
-         $kill -9 ppid     # 杀掉僵尸进程的父进程(ppid)g
+         $top  # 看有没有僵尸进程
+         $ps -ef | grep defunct    # 列出僵尸(defunct)进程
+         $kill -9 ppid     # 杀掉僵尸进程的父进程(ppid)
      
      
 查看 TCP/IP 链接状况
