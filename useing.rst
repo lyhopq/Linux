@@ -246,11 +246,25 @@ Windows远程访问Unbuntu
 
 #. 在Windows中安装vnc软件，安装完后打开 `Run VNC Viewer` ，并输入要登录的Ubuntu系统IP即可。 
 
-Ubuntu12.04 差异比较工具
+Ubuntu 差异比较工具
 ------------------------------
 
-下载\ 脚本_\ 解压后，执行 ``meld.sh`` 脚本，该脚本内容如下： 
+Meld，一个可视化的文件及目录比较工具。为了方便使用，写了几个脚本添加右键功能（模仿 Beyond Compare 的右键快捷菜单）。下载\ `脚本`_\ ，解压后执行：
+
+    .. code-block:: bash
+
+        chmod +x meld.sh
+        ./meld.sh  
+
+下图是使用方法及其结果： 
+
+    .. figure:: _static/meld1.png
+
+       使用方法，与 `Beyond Compare` 相似 
+
+    .. figure:: _static/meld2.png
+
+       可视化比较界面
 
 .. _脚本: _static/meld.zip
 
-    .. literalinclude:: _static/meld.sh 
