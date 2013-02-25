@@ -236,6 +236,16 @@ vim去掉 `^M`
 
         :%s/\r/g
 
+
+Windows远程访问Unbuntu
+------------------------
+
+1. 在Ubuntu中打开 ``桌面共享首选项`` 软件（Ubuntu12.04中按 ``windows`` 键，输入 ``桌面共享首选项`` ）。进行下图所示的设置：
+
+     .. image:: _static/gongxiang.png
+
+#. 在Windows中安装vnc软件，安装完后打开 `Run VNC Viewer` ，并输入要登录的Ubuntu系统IP即可。 
+
 Ubuntu12.04 差异比较工具
 ------------------------------
 

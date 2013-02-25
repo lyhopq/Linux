@@ -280,9 +280,9 @@ vim 技巧
 
   #. 以批处理模式运行vim
 
-     .. code:: bash
+     .. code-block:: bash
 
-        for file in *.txt; do
+        for file in \*.txt; do
           vim -e -s $file < change.vim # "-e"Ex模式， “-s”告诉vim安静地运行
           lpr -r tempfile              # 打印"tempfile"的内容，然后删除它("-r")
         done
