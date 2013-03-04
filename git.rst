@@ -13,7 +13,7 @@ Git基本使用
 ----------------------
 
 1. ``git rm -f source/*.pyc``
-#. ``git cvommit``
+#. ``git commit``
 #. 在将不要跟踪的文件在 ``.gitignore`` 中设定好
 
 
