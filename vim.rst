@@ -6,6 +6,8 @@ vim 技巧
 -------
 
 * ``*`` 和 ``#`` 对对当前光标所在的单词进行搜索
+* 选择光标所在的单词：viw （v进入visual模式，然后iw）
+* 复制光标所在的单词：yiw
 * `%` 匹配括号移动，包括 ``(, {, [)``
 * ``K`` 查看man手册
 * ``:Man xxx`` 在新窗口中查看man手册
@@ -49,7 +51,17 @@ vim 技巧
 分屏：split 和 vsplit
 ------------------------
 
-* :split 水平分屏 * :vsplit 垂直分屏 * <C-w><dir>: dir就是方向,可以是 hjkl 或是 ←↓↑→ 中的一个,其用来切换分屏。 * <C­w>_ (或 <C­w>|) : 最大化尺寸 (<C­w>| 垂直分屏) * <C­w>+ (或 <C­w>­) : 增加尺寸 录制宏 -------- * qa 把你的操作记录在寄存器a
+* :split  水平分屏 
+* :vsplit  垂直分屏 
+* <C-w><dir>  dir就是方向，可以是 hjkl 或是 ←↓↑→ 中的一个，用来切换分屏。 
+* <C­w>_ (或 <C­w>|) : 最大化尺寸 （_： 水平，|： 垂直）
+* <C­w>+ (或 <C­w>­-) : 增加/减小尺寸
+   
+ 
+录制宏 
+-------- 
+
+* qa 把你的操作记录在寄存器a
 * @a 会replay被录制的宏
 * @@ 是一个快捷键，用来replay最新录制的宏
 
@@ -308,9 +320,9 @@ vim 技巧
 
   #. 以批处理模式运行vim
 
-     .. code:: bash
+     .. code-block:: bash
 
-        for file in *.txt; do
+        for file in \*.txt; do
           vim -e -s $file < change.vim # "-e"Ex模式， “-s”告诉vim安静地运行
           lpr -r tempfile              # 打印"tempfile"的内容，然后删除它("-r")
         done
