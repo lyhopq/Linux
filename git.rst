@@ -60,6 +60,10 @@ github
      $ git config --global user.name "your name"
      $ git config --global user.email "youremail@youremail.com"
 
+   .. ttip::
+
+      上面命令中带了 ``--global`` 参数，这就意味是在进行全局配置，它会影响本机上的每个一个Git项目。如果没有 ``--global`` 表示本项目的配置。
+
 #. 进入要上传的仓库，右键git bash，添加远程地址： ::
 
      $ git remote add origin git@github.com:yourName/yourRepo.git
