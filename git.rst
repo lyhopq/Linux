@@ -41,6 +41,40 @@ merge的冲突解决
 
           git mergetool
 
+撤销一个合并
+----------------
+
+1. 如果你觉得你合并后的状态是一团乱麻,想把当前的修改都放弃,你可以用下面的命令回到合并之前的状态： ::
+    
+     $ git reset --hard HEAD    # 撤销上一次提交
+     $ git reset --hard HEAD^   # 撤销上上次提交
+
+#. 或者你已经把合并后的代码提交,但还是想把它们撒销： ::
+
+     $ git reset --hard ORIG_HEAD
+
+  .. ttip::
+
+     但是这条命令在某些情况会很危险,如果你把一个已经被另一个分支合并的分支给删了,那么 以后在合并相关的分支时会出错。
+
+#. 或者你只要回复一个文件，如"hello.c"： ::
+
+     $ git checkout -- hello.c
+
+
+
+rebase
+---------
+
+1. 在rebase的过程中,也许会出现冲突(conflict)。 在这种情况，Git会停止rebase并会让你去解决冲突；在解决完冲突后，使用一下命令完成rebase：  ::
+
+    git add
+    git rebase --continue
+
+#. 在任何时候，你可以用--abort参数来终止rebase的行动，并且"mywork" 分支会回到rebase开始前的状态： ::
+
+    $ git rebase --abort
+
 github
 =========
 
