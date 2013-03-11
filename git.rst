@@ -125,3 +125,10 @@ git-svn
    $ git merge work
    $ git svn rebase
    $ git svn dcommit
+
+#. 从svn更新： ::
+
+   $ git checkout master
+   $ git svn rebase
+
+
