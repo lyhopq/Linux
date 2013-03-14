@@ -279,7 +279,16 @@ Meld，一个可视化的文件及目录比较工具。为了方便使用，写�
 
     co#80:it#8:li#24:\
 
+Ubuntu 支持其他编码
+----------------------
 
+1. 修改/var/lib/locales/supported.d/local文件,在文件中添加： ::
 
+      zh_CN.GBK GBK
+      zh_CN.GB2312 GB2312 
+
+#. 执行： ::
+
+      sudo dpkg-reconfigure --force locales
 
 
