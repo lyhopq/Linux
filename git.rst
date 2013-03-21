@@ -75,6 +75,13 @@ rebase
 
     $ git rebase --abort
 
+跟踪分支
+----------
+
+  * $ git checkout --track origin/serverfix  或
+
+  * $ git checkout -b sf origin/serverfix   # 分支重命名为sf
+
 github
 =========
 
