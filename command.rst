@@ -226,6 +226,7 @@ find
     * find ~/doc -ctime -1  ＃在 ~/doc 下查找更改时间小于1天的文件
     * find /tmp -name core -type f -print | xargs /bin/rm -f
     * find /usr/lib -name \*.so
+    * `find . -name "*.c" | xargs cat | grep -v ^$ | wc -l` # 统计当前目录下c代码的行数
 
 
 ln
@@ -465,7 +466,7 @@ grep
     * grep 'w\(es\)t.*\1' aa
         如果west被匹配,则es就被存储到内存中,并标记为1,然后搜索任意个字符(.*),这些字符后面紧跟着另外一个es(\1),找到就显示该行。如果用egrep或grep -E,就不用"\"号进行转义,直接写成'w(es)t.*\1'就可以了。
     * grep '[0-9]\{3\}\.[0-9]\{3\}\.' ipfile
-    * grep -Po '(?<=\w\[)[a-zA-Z_]\w*(?=\])' r.sql | uniq | wc -l   
+    * `grep -Po '(?<=\w\[)[a-zA-Z_]\w*(?=\])' r.sql | uniq | wc -l`   
         在r.sql文件中找出有多少个“与正则表达式匹配”
 
 look

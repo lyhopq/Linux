@@ -275,6 +275,7 @@ Meld，一个可视化的文件及目录比较工具。为了方便使用，写�
     
     sudo vim /usr/share/vte/termcap/xterm
 
+
 找到下面设置，修改为想要的值（80为高，24为宽）： ::
 
     co#80:it#8:li#24:\
@@ -290,5 +291,22 @@ Ubuntu 支持其他编码
 #. 执行： ::
 
       sudo dpkg-reconfigure --force locales
+
+
+编码转换
+-------------
+
+* enca filename  # 查看文件编码
+* convmv -f UTF-8 -t GBK --notest filename  # 把文件名由utf-8转到gbk
+* enca -x utf-8 filename  # 把文件内容转换为utf-8
+* iconv -f GBK -t UTF-8 file1 -o file2  # 把文件内容由gbk转到utf-8
+* find . -type f -exec iconv -f GBK -t UTF-8 {} -o utf/{} \;  # 将当前目录下的文件由GBK编码转换为UTF-8编码，目录结构不变，转码后的文件保存在utf/default目录下
+
+   .. ttip::
+
+      -exec 参数后面跟的是 command命令，注意点如下：
+
+        * command命令的终止，使用 ';' (分号）来判定，在后面必须有一个 ';'。特别强调，对于不同的系统，直接使用分号可能会有不同的意义， 使用转义符'\'在分号前明确说明。
+        * 使用{}来表示文件名，也就是find前面处理过程中过滤出来的文件，用于command命令进行处理。
 
 

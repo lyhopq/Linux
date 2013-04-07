@@ -113,6 +113,11 @@ github
 git-svn
 ===========
 
+为了避免麻烦,试着遵守如下守则：
+
+ * 保持一个不包含由 git merge 生成的 commit 的线性提交历史。将在主线分支外进行的开发通通衍合回主线；避免直接合并。
+ * 不要单独建立和使用一个 Git 服务来搞合作。可以为了加速新开发者的克隆进程建立一个，但是不要向它提供任何不包含 git-svn-id 条目的内容。甚至可以添加一个 pre-receive 挂钩来在每一个提交信息中查找git-svn-id 并拒绝提交那些不包含它的 commit。
+
 工作流
 -------------
 
@@ -129,7 +134,7 @@ git-svn
 #. 提交回svn： ::
 
    $ git checkout master
-   $ git merge work
+   $ git merge work (最好用git rebase work, 因为svn只有线性的历史)
    $ git svn rebase
    $ git svn dcommit
 
